@@ -1,0 +1,19 @@
+
+Library
+  structure SMLTest
+  structure Test
+  structure YAMLish
+is
+  $/basis.cm
+  sml-test.sml
+  sml-test.sig
+  yamlish.sml
+#if defined(OPSYS_UNIX)
+  helpers-posix.sml
+#elif defined(OPSYS_WIN32)
+  helpers-windows.sml
+#else
+  #error "Unsupported operating system"
+#endif
+  test.sml
+
